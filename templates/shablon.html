@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{caption}}</title></head>
+<body>
+    {% if user %}
+        <p>Вы вошли  под именем {{user}}</p>
+    {% endif %} # Это конец блока if. В HTML нужно указывать конец, потому что отступы работают не так, как в Python
+
+    <p>Вы должны выложить {{number}}
+    {% if number == 1 %}
+        пост
+    {% elif 2 <= number <= 4 %}
+        поста
+    {% else %}
+        постов
+    {% endif %}
+    </p>
+    <p>
+
+    {% for user in list %}
+            {{user}}
+        {% endfor %}
+    </p>
+    <h1>Стихотворение Пушкина</h1>
+    <p>
+        {% for i in poem %}
+            {{i}}<br> # Используем тег, чтобы строчки стихотворения выводились не одной строкой
+        {% endfor %}
+    </p>
+</body>
+</html>
